@@ -2,4 +2,5 @@
 /Debug/*
 /Lib/*
 /Release/*
+!/Release/main_wnd.xml
 /Temp/*
