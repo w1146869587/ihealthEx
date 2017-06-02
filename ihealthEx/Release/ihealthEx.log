@@ -1,0 +1,13 @@
+﻿  MainWnd.cpp
+e:\cppproject\ihealthex\duilib\Core/UIManager.h(56): warning C4091: “typedef ”: 没有声明变量时忽略“DuiLib::EVENTTYPE_UI”的左侧
+e:\cppproject\ihealthex\duilib\Core/UIManager.h(64): warning C4091: “typedef ”: 没有声明变量时忽略“DuiLib::MSGTYPE_UI”的左侧
+  ihealthEx.cpp
+e:\cppproject\ihealthex\duilib\Core/UIManager.h(56): warning C4091: “typedef ”: 没有声明变量时忽略“DuiLib::EVENTTYPE_UI”的左侧
+e:\cppproject\ihealthex\duilib\Core/UIManager.h(64): warning C4091: “typedef ”: 没有声明变量时忽略“DuiLib::MSGTYPE_UI”的左侧
+  正在生成代码
+  2 of 6 functions (33.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  ihealthEx.vcxproj -> E:\CppProject\ihealthEx\Release\ihealthEx.exe
+  ihealthEx.vcxproj -> E:\CppProject\ihealthEx\Release\ihealthEx.pdb (Full PDB)
