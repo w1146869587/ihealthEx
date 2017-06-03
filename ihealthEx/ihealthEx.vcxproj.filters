@@ -13,18 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\UI">
+      <UniqueIdentifier>{e5a3aaae-bdf4-4ed1-89c7-0c63e3a22c35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\UI">
+      <UniqueIdentifier>{14198582-e470-4d5f-af55-c00ca515546c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Robot">
+      <UniqueIdentifier>{adaed43a-d475-45ca-8512-28a1d9f943b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Robot">
+      <UniqueIdentifier>{5779c668-37b0-4e5b-b81c-aa894726464a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ihealthEx.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\UI</Filter>
     </ClCompile>
-    <ClCompile Include="MainWnd.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="control_card.cpp">
+      <Filter>源文件\Robot</Filter>
+    </ClCompile>
+    <ClCompile Include="main_wnd.cpp">
+      <Filter>源文件\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MainWnd.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="control_card.h">
+      <Filter>头文件\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="main_wnd.h">
+      <Filter>头文件\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

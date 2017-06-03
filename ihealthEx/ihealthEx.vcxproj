@@ -79,7 +79,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)DuiLib;$(IncludePath)</IncludePath>
+    <IncludePath>E:\CppProject\ihealthEx\ihealthEx\include\aps_library;$(SolutionDir)DuiLib;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -150,11 +150,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="MainWnd.cpp" />
+    <ClCompile Include="control_card.cpp" />
+    <ClCompile Include="main_wnd.cpp" />
     <ClCompile Include="ihealthEx.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MainWnd.h" />
+    <ClInclude Include="control_card.h" />
+    <ClInclude Include="main_wnd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

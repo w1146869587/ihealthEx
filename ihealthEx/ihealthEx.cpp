@@ -1,6 +1,6 @@
 #include "UILib.h"
 
-#include "MainWnd.h"
+#include "main_wnd.h"
 
 using namespace DuiLib;
 
