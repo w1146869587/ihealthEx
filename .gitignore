@@ -4,3 +4,5 @@
 /Release/*
 !/Release/main_wnd.xml
 /Temp/*
+
+*.VC.db
