@@ -28,8 +28,8 @@ public:
 
 	I32 Initial();
 	void SetAxisParamZero();
-	void SetClutch(bool on_or_off = TRUE);
-	void SetMotor(bool on_or_off = TRUE);
+	void SetClutch(bool on_or_off = CLUTCH_ON);
+	void SetMotor(bool on_or_off = MOTOR_ON);
 	void GetLimitSwitchStatus();
 	void MotorMove(I32 axis_id, double velocity);
 
@@ -40,8 +40,8 @@ private:
 	long board_id_;
 	int total_axis_;
 	bool is_card_initialed_;
-	bool shoulder_limit_switch_status_[2];
-	bool elbow_limit_switch_status_[2];
+	bool shoulder_limit_switch_status_[2] { 0 };
+	bool elbow_limit_switch_status_[2] { 0 };
 
 private:
 	I32 FindSuitableControlCard(I32 borad_id_in_bits);

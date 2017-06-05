@@ -2,7 +2,7 @@
 #include <cmath>
 
 ControlCard::ControlCard() :
-	card_name_(0), board_id_(0), total_axis_(0), 
+	card_name_(0), board_id_(0), total_axis_(0),
 	is_card_initialed_(0), axis_status_(MOTOR_OFF), clutch_status_(CLUTCH_OFF) {
 
 }
@@ -85,7 +85,7 @@ void ControlCard::SetMotor(bool on_or_off) {
 
 void ControlCard::GetLimitSwitchStatus() {
 	I32 di_data = 0;
-	I32 di_ch[__MAX_DI_CH] { 0 };
+	bool di_ch[__MAX_DI_CH] { 0 };
 	I32 ret = 0;
 	ret = APS_read_d_input(board_id_, 0, &di_data);
 	for (int i = 0; i < __MAX_DI_CH; i++) {

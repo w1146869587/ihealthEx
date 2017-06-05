@@ -2,9 +2,10 @@
 <Window size="800,600"> <!-- 窗口的初始尺寸 -->
     <HorizontalLayout bkcolor="#FF00FF00"> <!-- 整个窗口的背景 -->
     	<HorizontalLayout bkcolor="#FFFFFFFF" height="32">
-    		<Button name="btnStart" text="开始" width="100" />
-    		<HorizontalLayout bkcolor="#FF00FF00" />
-    		<Button name="btnStop" text="结束" width="100"/>
+    		<Button name="btnInitial" text="初始化" width="100" />
+    		<Button name="btnPositive" text="正转" width="100"/>
+    		<Button name="btnNegative" text="反转" width="100"/>
+    		<Button name="stop" text="停止" width="100" />
     	</HorizontalLayout>
     </HorizontalLayout>
 </Window>

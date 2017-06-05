@@ -13,6 +13,7 @@ using namespace DuiLib;
 #else
 #   ifdef _UNICODE
 #       pragma comment(lib, "..\\Lib\\DuiLib.lib")
+#		pragma comment(lib, "..\\Lib\\APS168.lib")
 #   else
 #       pragma comment(lib, "..\\lib\\DuiLibA.lib")
 #   endif
