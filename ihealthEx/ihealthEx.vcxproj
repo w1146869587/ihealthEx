@@ -79,7 +79,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\CppProject\ihealthEx\ihealthEx\include\aps_library;$(SolutionDir)DuiLib;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include\aps_library;$(SolutionDir)DuiLib;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
