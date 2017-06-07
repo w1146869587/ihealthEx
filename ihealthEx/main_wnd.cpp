@@ -3,6 +3,15 @@
 
 using namespace DuiLib;
 
+static int i = 0;
+DWORD WINAPI threadfunc(LPVOID pParam) {
+	while (true) {
+		printf("%d\n", i++);
+		Sleep(1000);
+	}
+	return 0;
+}
+
 LPCTSTR CMainWnd::GetWindowClassName() const {
 	return _T("CMainWnd");
 }
@@ -16,6 +25,9 @@ void CMainWnd::InitWindow() {
 	m_pPositiveBtn = static_cast<CButtonUI *>(m_pm.FindControl(_T("btnPositive")));
 	m_pNegativeBtn = static_cast<CButtonUI *>(m_pm.FindControl(_T("btnNegative")));
 	m_pStopBtn = static_cast<CButtonUI *>(m_pm.FindControl(_T("btnStop")));
+	AllocConsole();
+	freopen("CONOUT$", "w", stdout);
+	CreateThread(NULL, 0, threadfunc, NULL, 0, NULL);
 }
 
 void CMainWnd::Notify(TNotifyUI &msg) {
@@ -33,8 +45,7 @@ void CMainWnd::Notify(TNotifyUI &msg) {
 			m_pControlCard->SetMotor();
 			m_pControlCard->MotorMove(ELBOW_AXIS_ID, -0.5);
 		} else if (name.CompareNoCase(_T("btnStop")) == 0) {
-			m_pControlCard->SetClutch(CLUTCH_OFF);
-			m_pControlCard->SetMotor(MOTOR_OFF);
+			m_pControlCard->PositionReset();
 		}
 	}
 }

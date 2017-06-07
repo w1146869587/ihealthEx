@@ -132,6 +132,7 @@ void ControlCard::ShoulderMotorMove(double velocity) {
 	}
 }
 
+//肘部电机运动，肘部光电开关进行限位
 void ControlCard::ElbowMotorMove(double velocity) {
 	if (!elbow_limit_switch_status_[0] && !elbow_limit_switch_status_[1]) {
 		MoveInVelocityMode(ELBOW_AXIS_ID, velocity);
@@ -167,3 +168,18 @@ void ControlCard::MoveInVelocityMode(I32 axis_id, double velocity) {
 		APS_vel(axis_id, 1, max_velocity, 0);
 	}
 }
+
+void ControlCard::PositionReset() {
+	SetClutch(CLUTCH_ON);
+	SetMotor(MOTOR_ON);
+	while (!shoulder_limit_switch_status_[0] || !elbow_limit_switch_status_[0]) {
+		ShoulderMotorMove(-2);
+		ElbowMotorMove(-2);
+		Sleep(100);
+	}
+	SetClutch(CLUTCH_OFF);
+	SetMotor(MOTOR_OFF);
+	SetAxisParamZero();
+}
+
+
