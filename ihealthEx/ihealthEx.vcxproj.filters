@@ -36,6 +36,9 @@
     <ClCompile Include="main_wnd.cpp">
       <Filter>源文件\UI</Filter>
     </ClCompile>
+    <ClCompile Include="passive_mode.cpp">
+      <Filter>源文件\Robot</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="control_card.h">
@@ -43,6 +46,9 @@
     </ClInclude>
     <ClInclude Include="main_wnd.h">
       <Filter>头文件\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="passive_mode.h">
+      <Filter>头文件\Robot</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

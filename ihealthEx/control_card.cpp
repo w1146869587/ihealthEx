@@ -7,10 +7,6 @@ ControlCard::ControlCard() :
 
 }
 
-ControlCard::~ControlCard() {
-
-}
-
 I32 ControlCard::Initial() {
 	I32 board_id_in_bits = 0;
 	I32 mode = 0;
@@ -99,14 +95,14 @@ void ControlCard::GetLimitSwitchStatus() {
 }
 
 //电机运动，在运动之前首先取得光电开关的值，用于限位
-void ControlCard::MotorMove(I32 axis_id, double velocity) {
+void ControlCard::MotorVelocityMove(I32 axis_id, double velocity) {
 	GetLimitSwitchStatus();
 	switch (axis_id) {
 		case SHOULDER_AXIS_ID:
-			ShoulderMotorMove(velocity);
+			ShoulderMotorVelocityMove(velocity);
 			break;
 		case ELBOW_AXIS_ID:
-			ElbowMotorMove(velocity);
+			ElbowMotorVelocityMove(velocity);
 			break;
 		default:
 			break;
@@ -114,7 +110,7 @@ void ControlCard::MotorMove(I32 axis_id, double velocity) {
 }
 
 //肩部电机运动，肩部光电开关进行限位
-void ControlCard::ShoulderMotorMove(double velocity) {
+void ControlCard::ShoulderMotorVelocityMove(double velocity) {
 	if (!shoulder_limit_switch_status_[0] && !shoulder_limit_switch_status_[1]) {
 		MoveInVelocityMode(SHOULDER_AXIS_ID, velocity);
 	} else if (shoulder_limit_switch_status_[0]) {
@@ -133,7 +129,7 @@ void ControlCard::ShoulderMotorMove(double velocity) {
 }
 
 //肘部电机运动，肘部光电开关进行限位
-void ControlCard::ElbowMotorMove(double velocity) {
+void ControlCard::ElbowMotorVelocityMove(double velocity) {
 	if (!elbow_limit_switch_status_[0] && !elbow_limit_switch_status_[1]) {
 		MoveInVelocityMode(ELBOW_AXIS_ID, velocity);
 	} else if (elbow_limit_switch_status_[0]) {
@@ -169,13 +165,17 @@ void ControlCard::MoveInVelocityMode(I32 axis_id, double velocity) {
 	}
 }
 
+void ControlCard::MotorAbsoluteMove(I32 axis_id, double position) {
+
+}
+
 void ControlCard::PositionReset() {
 	SetClutch(CLUTCH_ON);
 	SetMotor(MOTOR_ON);
 	GetLimitSwitchStatus();
 	while (!shoulder_limit_switch_status_[0] || !elbow_limit_switch_status_[0]) {
-		MotorMove(SHOULDER_AXIS_ID,-2);
-		MotorMove(ELBOW_AXIS_ID, -2);
+		MotorVelocityMove(SHOULDER_AXIS_ID,-4);
+		MotorVelocityMove(ELBOW_AXIS_ID, -4);
 		Sleep(100);
 	}
 	SetClutch(CLUTCH_OFF);

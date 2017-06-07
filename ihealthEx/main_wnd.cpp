@@ -27,7 +27,7 @@ void CMainWnd::Notify(TNotifyUI &msg) {
 			m_pControlCard = new ControlCard();
 			m_pControlCard->Initial();
 		} else if (name.CompareNoCase(_T("btnPositive")) == 0) {
-			m_pControlCard->MotorMove(SHOULDER_AXIS_ID, 2);
+			m_pControlCard->MotorVelocityMove(SHOULDER_AXIS_ID, 2);
 		} else if (name.CompareNoCase(_T("btnNegative")) == 0) {
 			APS_stop_move(SHOULDER_AXIS_ID);
 		} else if (name.CompareNoCase(_T("btnStop")) == 0) {

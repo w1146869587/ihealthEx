@@ -26,14 +26,15 @@
 class ControlCard {
 public:
 	ControlCard();
-	~ControlCard();
+	~ControlCard() = default;
 
 	I32 Initial();
 	void SetAxisParamZero();
 	void SetClutch(bool on_or_off = CLUTCH_ON);
 	void SetMotor(bool on_or_off = MOTOR_ON);
 	void GetLimitSwitchStatus();
-	void MotorMove(I32 axis_id, double velocity);
+	void MotorVelocityMove(I32 axis_id, double velocity);
+	void MotorAbsoluteMove(I32 axis_id, double position);
 	void PositionReset();
 
 private:
@@ -48,8 +49,8 @@ private:
 
 private:
 	I32 FindSuitableControlCard(I32 borad_id_in_bits);
-	void ShoulderMotorMove(double velocity);
-	void ElbowMotorMove(double velocity);
+	void ShoulderMotorVelocityMove(double velocity);
+	void ElbowMotorVelocityMove(double velocity);
 	void MoveInVelocityMode(I32 axis_id, double velocity);
 	
 };
