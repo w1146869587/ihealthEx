@@ -172,9 +172,10 @@ void ControlCard::MoveInVelocityMode(I32 axis_id, double velocity) {
 void ControlCard::PositionReset() {
 	SetClutch(CLUTCH_ON);
 	SetMotor(MOTOR_ON);
+	GetLimitSwitchStatus();
 	while (!shoulder_limit_switch_status_[0] || !elbow_limit_switch_status_[0]) {
-		ShoulderMotorMove(-2);
-		ElbowMotorMove(-2);
+		MotorMove(SHOULDER_AXIS_ID,-2);
+		MotorMove(ELBOW_AXIS_ID, -2);
 		Sleep(100);
 	}
 	SetClutch(CLUTCH_OFF);

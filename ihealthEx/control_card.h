@@ -43,8 +43,8 @@ private:
 	long board_id_;
 	int total_axis_;
 	bool is_card_initialed_;
-	bool shoulder_limit_switch_status_[2] { 0 };
-	bool elbow_limit_switch_status_[2] { 0 };
+	bool shoulder_limit_switch_status_[2]{ 0 };
+	bool elbow_limit_switch_status_[2]{ 0 };
 
 private:
 	I32 FindSuitableControlCard(I32 borad_id_in_bits);
