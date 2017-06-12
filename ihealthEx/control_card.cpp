@@ -165,8 +165,10 @@ void ControlCard::MoveInVelocityMode(I32 axis_id, double velocity) {
 	}
 }
 
-void ControlCard::MotorAbsoluteMove(I32 axis_id, double position) {
-
+//在运行AbsoluteMove之前，首先要正确设置参数零点，一般我们在PositionReset之后就会SetAxisParamZero，
+//所以在调用这个函数之前，我们需要先调用PositionReset
+void ControlCard::MotorAbsoluteMove(I32 axis_id, double position, double velocity) {
+	APS_absolute_move(axis_id, position / VEL_TO_PALSE, velocity / VEL_TO_PALSE);
 }
 
 void ControlCard::PositionReset() {
@@ -181,6 +183,21 @@ void ControlCard::PositionReset() {
 	SetClutch(CLUTCH_OFF);
 	SetMotor(MOTOR_OFF);
 	SetAxisParamZero();
+}
+
+void ControlCard::WaitTillMoveFinish() {
+	I32 shoulder_status, elbow_status;
+	while (true) {
+		shoulder_status = APS_motion_status(SHOULDER_AXIS_ID);
+		elbow_status = APS_motion_status(ELBOW_AXIS_ID);
+		if (((~shoulder_status & ~elbow_status) >> 5) & 0x1)
+			break;
+	}
+}
+
+void ControlCard::StopMove() {
+	SetClutch(CLUTCH_OFF);
+	SetMotor(MOTOR_OFF);
 }
 
 

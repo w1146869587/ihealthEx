@@ -19,9 +19,8 @@
 #define SHOULDER_AXIS_ID (0)
 #define ELBOW_AXIS_ID (1)
 
-#define POSITION_RESET_TIMER_ID (1)
-
 #define VEL_TO_PALSE (0.009) //为了将速度转化为脉冲
+#define MOVE_VELOCITY (4)
 
 class ControlCard {
 public:
@@ -34,9 +33,10 @@ public:
 	void SetMotor(bool on_or_off = MOTOR_ON);
 	void GetLimitSwitchStatus();
 	void MotorVelocityMove(I32 axis_id, double velocity);
-	void MotorAbsoluteMove(I32 axis_id, double position);
+	void MotorAbsoluteMove(I32 axis_id, double position, double velocity);
+	void WaitTillMoveFinish();
 	void PositionReset();
-
+	void StopMove();
 private:
 	bool axis_status_;
 	bool clutch_status_;
