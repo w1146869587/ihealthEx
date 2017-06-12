@@ -10,7 +10,7 @@ PassiveMode::PassiveMode() : p_control_card_(std::make_shared<ControlCard>()){
 }
 
 void PassiveMode::StartMove(const PassiveActionParam &param) {
-	int step_count = 0;
+	double step_count = 1;
 	PassivePosition position;
 	p_control_card_->SetMotor(MOTOR_ON);
 	p_control_card_->SetClutch(CLUTCH_ON);
@@ -22,7 +22,7 @@ void PassiveMode::StartMove(const PassiveActionParam &param) {
 	}
 }
 
-PassivePosition PassiveMode::CalculateAxisPosition(const PassiveActionParam &param, int step) {
+PassivePosition PassiveMode::CalculateAxisPosition(const PassiveActionParam &param, double step) {
 	PassivePosition position;
 	double a[2] = { 0 };
 	double b[2] = { 0 };

@@ -1,0 +1,13 @@
+﻿  passive_mode.cpp
+f:\maowei\ihealthex\ihealthex\control_card.h(2): fatal error C1083: 无法打开包括文件: “APS168.h”: No such file or directory
+  ihealthEx.cpp
+f:\maowei\ihealthex\duilib\core\uimanager.h(56): warning C4091: “typedef ”: 没有声明变量时忽略“DuiLib::EVENTTYPE_UI”的左侧
+f:\maowei\ihealthex\duilib\core\uimanager.h(64): warning C4091: “typedef ”: 没有声明变量时忽略“DuiLib::MSGTYPE_UI”的左侧
+f:\maowei\ihealthex\ihealthex\control_card.h(2): fatal error C1083: 无法打开包括文件: “APS168.h”: No such file or directory
+  main_wnd.cpp
+f:\maowei\ihealthex\duilib\core\uimanager.h(56): warning C4091: “typedef ”: 没有声明变量时忽略“DuiLib::EVENTTYPE_UI”的左侧
+f:\maowei\ihealthex\duilib\core\uimanager.h(64): warning C4091: “typedef ”: 没有声明变量时忽略“DuiLib::MSGTYPE_UI”的左侧
+f:\maowei\ihealthex\ihealthex\control_card.h(2): fatal error C1083: 无法打开包括文件: “APS168.h”: No such file or directory
+  control_card.cpp
+f:\maowei\ihealthex\ihealthex\control_card.h(2): fatal error C1083: 无法打开包括文件: “APS168.h”: No such file or directory
+  正在生成代码...
